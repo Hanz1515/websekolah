@@ -1,0 +1,275 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+/* Menambahkan warna latar belakang hitam ke navigasi atas */
+.topnav {
+  background-color: #333;
+  overflow: hidden;
+}
+
+/* Memberi gaya tautan di dalam bilah navigasi */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Mengubah warna tautan saat mengarahkan kursor */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Menambahkan kelas aktif untuk menyorot halaman saat ini */
+.topnav a.active {
+  background-color: #91C8E4;
+  color: white;
+}
+
+/* Sembunyikan tautan yang seharusnya membuka dan menutup topnav di layar kecil */
+.topnav .icon {
+  display: none;
+}
+/* Jika lebar layar kurang dari 600 piksel, sembunyikan semua tautan, kecuali yang pertama ("Beranda"). Tampilkan link yang berisi harus membuka dan menutup topnav (.icon) */
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+/* Kelas "responsif" ditambahkan ke topnav dengan JavaScript ketika pengguna mengklik ikon. Kelas ini membuat topnav terlihat bagus di layar kecil (menampilkan tautan secara vertikal, bukan horizontal) */
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+.thirdsection {
+  display: flex;
+  flex-direction: column;
+}
+.schoolact {
+  font-weight: bold;
+  font-size: 80px;
+  text-align: center;
+  color: white;
+}
+.items {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin-bottom: 100px;
+}
+.item {
+  background-color: #78C1F3;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  width: 20%;
+  height: 400px;
+}
+.portrait {
+  max-width: 100%;
+  max-height: 100%;
+}
+.item img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+}
+.item p {
+  display: flex;
+}
+.textcent {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+/* Bagian Gamabar Atau Tampilan Beranda Dengan Css Grid (Responsif) */
+body {
+  background-image: url(asset/1135x500px-BinusUniv2.jpg);
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  margin: 80px;
+  align-items: center;
+  grid-gap: 30px;
+}
+img {
+  object-fit: cover;
+}
+.grid > article {
+  box-shadow: 2px 3px 10px 2px black;
+  border-radius: 15px;
+  text-align: center;
+  background: #78C1F3;
+  width: 300px;
+  transition: transform;
+}
+.grid > article img {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  width: 100%;
+}
+.konten{
+  text-transform: uppercase;
+  cursor: progress;
+}
+.konten .h2 {
+  list-style: none;
+}
+.grid > article:hover {
+  transform: rotate(10deg); /* Transisi Miring */
+  transition: .5s;
+  /*transform: scale(0.5); /* Transisi Zoom Out */
+  /*transform: rotate(10deg); /* Transisi Zoom In */
+  /*transform: translate(50px); /* Transisi Geser */
+}
+
+/*Responsif Gamnar Atau Img*/
+@media (max-width:1000px) {
+  .grid{
+    grid-template-columns: repeat(2,1fr); /*Gambar Kesamping*/
+  }
+}
+@media (max-width:800px) {
+  .grid{
+    grid-template-columns: repeat(1,1fr); /*Gambar Kebawah*/
+  }
+}
+
+/*Bagian Background Responsif*/
+body {
+  background-image: url(background.jpg);
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
+
+/*Bagian Footer*/
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+footer {
+  position: relative;
+  width: 100%;
+  background: #3586ff;
+  min-height: 100px;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+footer .sosial_icon,
+footer .menu {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+  flex-wrap: wrap;
+}
+footer .sosial_icon li,
+footer .menu li {
+  list-style: none;
+}
+footer .sosial_icon li a {
+  font-size: 2em;
+  color: #fff;
+  margin: 0 10px;
+  display: inline-block;
+  transition: 0.5s;
+}
+footer .sosial_icon li a:hover {
+  transform: translateY(-10px);
+}
+footer .menu li a {
+  font-size: 1.2em;
+  color: #fff;
+  margin: 0 10px;
+  display: inline-block;
+  text-decoration: none;
+  opacity: 0.75;
+}
+footer .menu li a:hover {
+  opacity: 1;
+}
+footer p {
+  color: #fff;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  font-size: 1.1em;
+}
+footer .wave {
+  position: absolute;
+  top: -90px;
+  left: 0;
+  width: 100%;
+  height: 90px;
+  background: url(asset/wave.png);
+  background-size: 1000px 100px;
+}
+footer .wave#wave1 {
+  z-index: 1000;
+  opacity: 1;
+  bottom: 0;
+  animation: animateWave_02 4s linear infinite;
+}
+footer .wave#wave2 {
+  z-index: 999;
+  opacity: 0.5;
+  bottom: 10px;
+  animation: animateWave 4s linear infinite;
+}
+footer .wave#wave3 {
+  z-index: 1000;
+  opacity: 0.2;
+  bottom: 15px;
+  animation: animateWave 3s linear infinite;
+}
+footer .wave#wave4 {
+  z-index: 999;
+  opacity: 0.7;
+  bottom: 20px;
+  animation: animateWave 3s linear infinite;
+}
+@keyframes animateWave {
+  0% {
+    background-position-x: 1000px;
+  }
+  100% {
+    background-position-x: 0px;
+  }
+}
+@keyframes animateWave_02 {
+  0% {
+    background-position-x: 0px;
+  }
+  100% {
+    background-position-x: 10s0px;
+  }
+}
